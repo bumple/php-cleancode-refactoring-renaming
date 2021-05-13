@@ -8,17 +8,21 @@
 
 class Calculator
 {
-    public function calculate($a, $b, $o) {
-        switch ($o) {
-            case '+':
-                return $a + $b;
-            case '-':
-                return $a - $b;
-            case '*':
-                return $a * $b;
+    const ADDITION = '+';
+    const SUBTRACTION = '-';
+    const MULTIPLICATION = '*';
+
+    public function calculate($firstOperand, $secondOperand, $operator) {
+        switch ($operator) {
+            case self::ADDITION:
+                return $firstOperand + $secondOperand;
+            case self::SUBTRACTION:
+                return $firstOperand - $secondOperand;
+            case self::MULTIPLICATION:
+                return $firstOperand * $secondOperand;
             case '/':
-                if ($b != 0) {
-                    return $a / $b;
+                if ($secondOperand != 0) {
+                    return $firstOperand / $secondOperand;
                 } else {
                     echo("Can not divide by 0");
                     break;
